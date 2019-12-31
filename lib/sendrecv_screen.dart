@@ -212,11 +212,12 @@ class _SendrecvScreenState extends State<SendrecvScreen> {
           }));
           break;
         case "reject":
+          final String reason = jsonMessage['reason'] ?? "Unknown error";
           showDialog(
             context: context,
             builder: (context) {
               return AlertDialog(
-                title: Text("部屋がいっぱいです"),
+                title: Text(reason),
                 actions: <Widget>[
                   FlatButton(
                     onPressed: () {
