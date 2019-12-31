@@ -1,4 +1,4 @@
-package com.example.ayame_flutter_example
+package com.wapa5pow.ayame_flutter_example
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity
