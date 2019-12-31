@@ -38,6 +38,14 @@ class _SendrecvScreenState extends State<SendrecvScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Sendrecv'),
+        actions: _inCalling
+            ? <Widget>[
+                IconButton(
+                  icon: Icon(Icons.switch_video),
+                  onPressed: _toggleCamera,
+                )
+              ]
+            : null,
       ),
       body: OrientationBuilder(
         builder: (context, orientation) {
@@ -197,7 +205,7 @@ class _SendrecvScreenState extends State<SendrecvScreen> {
       "type": "register",
       "clientId": "${Random().nextInt(pow(2, 32).toInt())}",
       "roomId": "wapa5pow@ayame-test-sdk",
-      "key": "XBZubSMe8yIZ_zWaJOLjiMo8j3WkOjBrGvMOAZKSBWc5ZTDp",
+      "key": "vkfKgOwAwiNkwn5rPfc7lwfEEvedwkSnDnMpEmk6pmHrJ0WD",
     });
     _channel.sink.add(registerMessage);
 
@@ -288,5 +296,12 @@ class _SendrecvScreenState extends State<SendrecvScreen> {
     setState(() {
       _inCalling = false;
     });
+  }
+
+  Future<bool> _toggleCamera() async {
+    final videoTrack = _localStream
+        ?.getVideoTracks()
+        ?.firstWhere((track) => track.kind == "video");
+    await videoTrack?.switchCamera();
   }
 }
