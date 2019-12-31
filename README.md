@@ -1,16 +1,20 @@
 # ayame_flutter_example
 
-A new Flutter project.
+WebRTC Signaling Server Ayame用のFlutterクライアントサンプルです。
 
-## Getting Started
+## 使い方
 
-This project is a starting point for a Flutter application.
+Ayameを使えるようにするため[WebRTC シグナリングサービス Ayame Lite ベータ版](https://ayame-lite.shiguredo.jp/beta)にアクセスしてGitHubでSign inしてください。
+ここではシグナリングキーをメモしておきます。
 
-A few resources to get you started if this is your first Flutter project:
+ルームへの接続情報は[ここ](https://github.com/wapa5pow/ayame_flutter_example/blob/master/lib/sendrecv_screen.dart#L196)にあるので、roomIdは認証ありにするために`@`を含んだIdをよしなに、keyをさきほどメモしたものに書き換えます。
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+### 実機にインストールする場合
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+シミュレータでカメラがいい感じに動かないので、実機にインストールして確認しています。
+
+Androidの場合はそのままビルドすればインストールできます。
+
+iOSの場合はBundle IDと証明書をいいかんじにしてインストールします。
+
+
